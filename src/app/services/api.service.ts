@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -14,11 +14,17 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
 
-  getData(): Observable<any>{
+  getAppointments(): Observable<any>{
     return this.http.get(this.apiUrl+'citas').pipe(catchError(this.handleError));
   }
 
 
+  createAppointment(data: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(this.apiUrl+'citas', data, { headers }).pipe(
+      catchError(this.handleError)
+    );
+  }
 
 
   private handleError(error: HttpErrorResponse) {

@@ -6,7 +6,7 @@
   <img src="path/to/your/bottom-right.svg" alt="Bottom Right" class="background-svg bottom-right">
 
   <!-- Main content -->
-  <main class="container mx-auto px-14 py-20 -mt-28  z-10">
+  <main class="container mx-auto px-14 py-20 -mt-28 " style="z-index: 0 !important;position: relative;">
     <div class=" mx-auto w-3/5 px-24 py-14 rounded-3xl bg-white shadow-lg">
       <h2 class="text-center main-title">Campañas activas de vacunación contra Covid-19 (ZMG)</h2>
 
@@ -37,18 +37,20 @@
 
       <div class="bg-white ">
         <h3 class="font-semibold mb-4 color-37aefe text-3xl">Comenzar ahora</h3>
-        <form >
-          <label for="curp" class="mb-2 font-semibold w-1/2 color-676d72 text-2xl">Ingresa tu CURP para agendar una cita  <br>o para <a href="#" class="color-37aefe underline">cancelar una cita</a> ya registrada.</label>
+        <form (ngSubmit)="onSubmit()" #curpForm="ngForm">
+          <label for="curp" class="mb-2 font-semibold w-1/2 color-676d72 text-2xl">
+            Ingresa tu CURP para agendar una cita
+            <br>o para <a href="#" class="color-37aefe underline">cancelar una cita</a> ya registrada.
+          </label>
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-8 relative">
-              <input [(ngModel)]="curp" placeholder="Introduce tu CURP" type="text" id="curp" name="curp" class="mb-4 my-6 p-2 border rounded w-full pl-16">
-              <img  class="mr-4 ml-2 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" src="../../assets/svgs/ico_user.svg" alt="user-icon">
+              <input [(ngModel)]="curp" (input)="onInputChange($event)" placeholder="Introduce tu CURP" type="text" id="curp" name="curp" class="mb-4 my-6 p-2 border rounded w-full pl-16" required minlength="18">
+              <img class="mr-4 ml-2 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" src="../../assets/svgs/ico_user.svg" alt="user-icon">
             </div>
             <div class="col-span-4">
-              <button [disabled]="curp.length < 18" [ngClass]="{'button-disabled': curp.length < 18, 'button-continue': curp.length >= 8}" class="text-white px-4 py-2 rounded-lg  w-full">Continuar</button>
+              <button [disabled]="curpForm.invalid" [ngClass]="{'button-disabled': curpForm.invalid, 'button-continue': !curpForm.invalid}" class="text-white px-4 py-2 rounded-lg w-full">Continuar</button>
             </div>
           </div>
-
         </form>
         <p class="my-4 color-676d72">Si no conoces tu CURP <a target="_blank" href="https://www.gob.mx/curp/" class="color-37aefe underline">consulta aquí</a></p>
       </div>
@@ -61,3 +63,8 @@
     <a href="https://wa.me/523338233220" class="text-white font-semibold">33 3823 3220</a>
   </div>
 </body>
+
+
+<div class="w-full h-60 main-blue-back" style="margin-top: -15em;z-index: -100 !important;">
+
+</div>
