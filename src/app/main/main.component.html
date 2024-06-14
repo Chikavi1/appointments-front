@@ -44,7 +44,10 @@
           </label>
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-8 relative">
-              <input [(ngModel)]="curp" (input)="onInputChange($event)" placeholder="Introduce tu CURP" type="text" id="curp" name="curp" class="mb-4 my-6 p-2 border rounded w-full pl-16" required minlength="18">
+              <input [(ngModel)]="curp" (input)="onInputChange($event)"
+              placeholder="Introduce tu CURP" type="text" id="curp"
+              name="curp" class="mb-4 my-6 p-2 border rounded w-full pl-16"
+              required minlength="18" maxlength="18">
               <img class="mr-4 ml-2 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" src="../../assets/svgs/ico_user.svg" alt="user-icon">
             </div>
             <div class="col-span-4">
