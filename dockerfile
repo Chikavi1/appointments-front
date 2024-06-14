@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 4200
 
 # Comando para iniciar el servidor
-CMD ["ng", "serve"]
+CMD ["ng", "serve" ,"--host", "0.0.0.0"]
