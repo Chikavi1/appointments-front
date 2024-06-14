@@ -15,7 +15,7 @@ RUN npm install -g @angular/cli
 COPY . .
 
 # Exponer el puerto
-EXPOSE 3000
+EXPOSE 4200
 
 # Comando para iniciar el servidor
 CMD ["ng", "serve"]
