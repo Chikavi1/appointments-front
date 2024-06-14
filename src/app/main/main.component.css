@@ -1,0 +1,55 @@
+.background-svg {
+  position: absolute;
+  z-index: -1;
+}
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+.arrow-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bg-custom {
+  background-color: #676D72;
+}
+
+.line-gray{
+  color: #00000027;
+}
+
+
+.button-disabled{
+  background-color: #80a6cb;
+}
+
+.button-continue{
+  background-color: #015DB1;
+}
+
+.circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background-color: #37AEFE;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 2px; /* Ajusta el espacio entre el círculo y el texto */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}

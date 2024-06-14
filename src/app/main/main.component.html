@@ -1,0 +1,63 @@
+<body class="bg-custom font-sans ">
+  <!-- SVG Backgrounds -->
+  <img src="../../assets/svgs/img_left.svg" alt="Top Left" class="background-svg top-left">
+  <img src="path/to/your/bottom-left.svg" alt="Bottom Left" class="background-svg bottom-left">
+  <img src="path/to/your/top-right.svg" alt="Top Right" class="background-svg top-right">
+  <img src="path/to/your/bottom-right.svg" alt="Bottom Right" class="background-svg bottom-right">
+
+  <!-- Main content -->
+  <main class="container mx-auto px-14 py-20 -mt-28  z-10">
+    <div class=" mx-auto w-3/5 px-24 py-14 rounded-3xl bg-white shadow-lg">
+      <h2 class="text-center main-title">Campañas activas de vacunación contra Covid-19 (ZMG)</h2>
+
+
+      <div class="flex justify-center space-x-4 mb-8  items-center">
+        <img src="../../assets/svgs/ico_left.svg" alt="Left Arrow" class="arrow-svg">
+        <div class="bg-white p-4 shadow-lg w-full rounded-3xl h-56">
+          <img src="../../assets/svgs/Group 5447.svg" alt="Grupo 1">
+          <h3 class="text-xl font-extrabold mb-2 people-color">Personas de 18 y más</h3>
+          <p class="main-text-dosis font-extrabold ">
+            <span class="circle">1</span>
+            Primera Dosis</p>
+        </div>
+        <div class="bg-white p-4 shadow-lg w-full rounded-3xl h-56">
+          <img src="../../assets/svgs/Group 5447.svg" alt="Grupo 2">
+          <h3 class="text-xl font-extrabold mb-2 people-color">Personas de 18 y más</h3>
+          <p class="main-text-dosis font-extrabold ">
+            <span class="circle">2</span>
+            Segunda Dosis</p>
+          <p class="orange-color font-extrabold">ASTRA ZENECA</p>
+          <p class="text-sm orange-color font-bold">Primera dosis aplicada antes del 15 de Agosto</p>
+        </div>
+        <img src="../../assets/svgs/ico_right.svg" alt="Right Arrow" class="arrow-svg">
+      </div>
+
+      <hr class="my-8 line-gray">
+
+
+      <div class="bg-white ">
+        <h3 class="font-semibold mb-4 color-37aefe text-3xl">Comenzar ahora</h3>
+        <form >
+          <label for="curp" class="mb-2 font-semibold w-1/2 color-676d72 text-2xl">Ingresa tu CURP para agendar una cita  <br>o para <a href="#" class="color-37aefe underline">cancelar una cita</a> ya registrada.</label>
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-8 relative">
+              <input [(ngModel)]="curp" placeholder="Introduce tu CURP" type="text" id="curp" name="curp" class="mb-4 my-6 p-2 border rounded w-full pl-16">
+              <img  class="mr-4 ml-2 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" src="../../assets/svgs/ico_user.svg" alt="user-icon">
+            </div>
+            <div class="col-span-4">
+              <button [disabled]="curp.length < 18" [ngClass]="{'button-disabled': curp.length < 18, 'button-continue': curp.length >= 8}" class="text-white px-4 py-2 rounded-lg  w-full">Continuar</button>
+            </div>
+          </div>
+
+        </form>
+        <p class="my-4 color-676d72">Si no conoces tu CURP <a target="_blank" href="https://www.gob.mx/curp/" class="color-37aefe underline">consulta aquí</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- WhatsApp Button -->
+  <div class="fixed top-24 right-40 flex items-center bg-37aefe rounded-full shadow-lg p-3">
+    <img src="../../assets/svgs/ico_tel.svg" alt="WhatsApp" class="w-6 h-6 mr-2">
+    <a href="https://wa.me/523338233220" class="text-white font-semibold">33 3823 3220</a>
+  </div>
+</body>
