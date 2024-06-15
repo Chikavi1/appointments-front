@@ -9,13 +9,15 @@
   color: #37AEFD
 }
 
+body{
+  font-family: 'nutgmen'; /* Reemplaza 'nutgmen' con tu fuente personalizada si es necesario */
+  overflow-x: hidden;
+}
+
 .main-title{
   color: #015DB1;
-
-  /* UI Properties */
   font: normal normal 900 36px/40px Nutmeg;
   letter-spacing: 0px;
-  color: #015DB1;
   opacity: 1;
   }
 
@@ -75,9 +77,6 @@ opacity: 1;
   color: #FF6C00;
 }
 
-.nutgmen{
-  color: #00326C;
-}
 
 
 
